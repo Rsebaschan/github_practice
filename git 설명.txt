@@ -1,0 +1,103 @@
+				      #vscode에서 - 버튼을 누르면 git add를 취소 한다는뜻
+      add를 하면 내가 허브에 보낼 파일을 지정  #vscode에서 + 버튼을 누르면 git add라는 뜻
+          commit하면  허브에 파일을 보냄                                         push 하면 허브에서 사이트로 옮겨짐
+local(내가 저장할 폴더? / 내 컴퓨터?) ------->   staging area(택배 허브)  -------->   remote( github 사이트 / 원격 저장소)
+
+$ git status   # 하면 add한 파일을 볼수 있다.
+$ git add .    #하면 그 directory에서 모든 폴더를 add 함  
+$ git log --all --online     # commit한 내역을 조회
+
+  
+                                                                   pull
+local(내가 저장할 폴더? / 내 컴퓨터?) <---------------------------------------------   repository( github 사이트)
+
+
+
+git 사용법 정리
+
+git을 사용하기 위한 폴더에서 우클릭해서  powershell을 열고
+$	git config --global user.email "abc@def.com"
+$	git config --global user.name "name"
+
+
+이게 첫 셋팅이다.
+
+--------------------------------------------------------
+$	git init
+$	git add README.md
+$	git commit -m "first commit"
+$	git branch -M main
+$	git remote add origin https://github.com/Rsebaschan/asdf.git
+$	git push -u origin main
+
+
+그리고
+vscode로 그 폴더를 열고
+
+$	git init                #git 이라는 놈이 이 폴더를 감시하기 시작 
+$	git add  파일명
+$	git commit -m "설명을 적기"
+
+이와 같은 add 와 commit을 하면 staging area에 파일이 저장
+
+$	git branch -M main
+$	git remote add origin https://github.com/Rsebaschan/asdf.git
+$	git push	        or        $   git push -u origin main
+
+push로 staging area에 잇는 파일을 remote(즉, github 사이트)로 보낸다. 
+
+
+push 명령이 거부(reject)된다면 원격 저장소의 변경 사항이 로컬 저장소에 제대로 반영되지 않은 경우이니 
+git pull 혹은 git fetch/git merge로 변경 사항을 로컬 저장소 파일에 머지한 후 다시 시도해 보자.
+
+
+
+
+-----------------------------------------------------------------------------------
+branch 생성
+
+
+$ git branch conding_apple
+
+$ git switch conding_apple          or  $ git checkout conding_apple
+
+
+그런데 branch에서 만든거를 github사이트에 따로 저장해서 올릴려면
+$  git push --set-upstream origin coding_apple
+git push --set-upstream origin coding_apple 그러니깐 이 코드를 하면
+내가 git push 를하면 기본적으로 coding_apple 이라는 branch로 저장 된다는거야
+
+이런식으로 하면 안될듯?
+
+$ git push -u orgin coding_apple
+이런식으로 해야할듯
+main을 지켜야하니깐
+
+
+
+그런데 git push --set-upstream origin main 을 하고
+git checkout coding_apple 하고
+파일 수정후
+git push 만 해도 저장은 coding_apple 에 되는데??
+
+
+-------------------------------------------------------------------
+branch를 main랑 합칠수 있다.
+
+일단 제일 중요한거
+!!main 브랜치로 이동해라!!
+
+그리고 main 브랜치인것을 확인하고
+$ git merge coding_apple 하기
+
+
+여기서 주의 conflict error가 나올수도 있다.
+만약 main에서 수정한 부분과 coding_apple에서 수정한 부분이 같으면 conflict가 나옴
+
+그러니깐 되도록이면 main은 놔두고 coding_apple 즉 sub branch에서 수정후
+merge 하기
+
+
+
+
+
