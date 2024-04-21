@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # 그럼 두번째 테스트를 위해 적는다. 파일 2개를 동시에 변화를 주고 업데이트
+# diff 테스트를 해보겠다
 def least_squares(y, tx):
     """Calculate the least squares solution.
        returns mse, and optimal weights.
