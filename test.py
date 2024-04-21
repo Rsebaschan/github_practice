@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+# git 을 테스트 하기위해 적음 이줄은
 def least_squares(y, tx):
     """Calculate the least squares solution.
        returns mse, and optimal weights.
