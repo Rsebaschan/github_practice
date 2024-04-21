@@ -4,7 +4,7 @@ from test_utils import test
 
 from helpers import sample_data, load_data, standardize
 
-
+# 그럼 두번째 테스트를 위해 적는다. 파일 2개를 동시에 변화를 주고 업데이트
 #-----------------------------------------------------------------------------------------------
 
 def least_squares(y, tx):

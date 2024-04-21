@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# git 을 테스트 하기위해 적음 이줄은
+# 그럼 두번째 테스트를 위해 적는다. 파일 2개를 동시에 변화를 주고 업데이트
 def least_squares(y, tx):
     """Calculate the least squares solution.
        returns mse, and optimal weights.
